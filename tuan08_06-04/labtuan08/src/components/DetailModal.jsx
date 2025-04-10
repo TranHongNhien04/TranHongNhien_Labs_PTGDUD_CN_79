@@ -9,7 +9,6 @@ import {
     Typography,
 } from '@material-tailwind/react';
 
-
 function DetailModal({ open, setOpen, orderData, onSubmit, isEditMode = false }) {
     const [order, setOrder] = useState({
         customerName: '',
@@ -48,11 +47,9 @@ function DetailModal({ open, setOpen, orderData, onSubmit, isEditMode = false })
     const handleSubmit = () => {
         const payload = {
             ...order,
-            orderValue: `$${order.orderValue.toLocaleString()}`,
+            orderValue: parseInt(order.orderValue)
         };
-
         onSubmit(payload, isEditMode);
-
         handleClose();
     };
 

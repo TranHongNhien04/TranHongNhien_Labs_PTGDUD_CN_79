@@ -12,35 +12,46 @@ function DataTableCustom() {
     const [openModal, setOpenModal] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const ordersRes = await axios.get('http://localhost:3000/Orders');
-                setOrder(ordersRes.data || []);
-                setLoading(false);
-            } catch (err) {
-                console.error('Lỗi xảy ra khi gọi API:', err);
-                setError(err.message);
-                setLoading(false);
-            }
-        };
-
         fetchData();
     }, []);
+
+    const fetchData = async () => {
+        try {
+            const ordersRes = await axios.get('http://localhost:3000/Orders');
+            setOrder(ordersRes.data || []);
+            setLoading(false);
+        } catch (err) {
+            console.error('Error fetching data:', err);
+            setError(err.message);
+            setLoading(false);
+        }
+    };
 
     const handleEdit = (row) => {
         setSelectedOrder(row);
         setOpenModal(true);
     };
 
-    const handleModalSubmit = (updatedOrder, isEditMode) => {
-        if (isEditMode) {
-            setOrder((prevOrders) =>
-                prevOrders.map((o) =>
-                    o.id === selectedOrder.id ? { ...o, ...updatedOrder } : o
-                )
-            );
-        } else {
-            setOrder((prevOrders) => [...prevOrders, { ...updatedOrder, id: Date.now() }]);
+    const handleModalSubmit = async (updatedOrder, isEditMode) => {
+        try {
+            let response;
+            if (isEditMode) {
+                response = await axios.put(
+                    `http://localhost:3000/Orders/${selectedOrder.id}`,
+                    updatedOrder
+                );
+                setOrder((prevOrders) =>
+                    prevOrders.map((o) =>
+                        o.id === selectedOrder.id
+                            ? { ...response.data, orderValue: `$${response.data.orderValue.toLocaleString()}` }
+                            : o
+                    )
+                );
+            }
+            setOpenModal(false);
+        } catch (err) {
+            console.error('Error saving order:', err);
+            setError('Failed to save order: ' + err.message);
         }
     };
 
@@ -94,7 +105,7 @@ function DataTableCustom() {
                     setOpen={setOpenModal}
                     orderData={selectedOrder}
                     onSubmit={handleModalSubmit}
-                    isEditMode={true}
+                    isEditMode={!!selectedOrder}
                 />
             )}
         </>
