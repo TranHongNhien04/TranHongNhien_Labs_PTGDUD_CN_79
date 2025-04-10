@@ -124,6 +124,22 @@
       "orderValue": 425,
       "orderDate": "10/06/2025",
       "status": "Completed"
+    },
+    {
+      "id": "1744281507667",
+      "customerName": "ABC",
+      "company": "ABC Company",
+      "orderValue": "$0",
+      "orderDate": "2025-04-10",
+      "status": "New"
+    },
+    {
+      "id": "1744282683849",
+      "customerName": "ABCD",
+      "company": "ABCD Company",
+      "orderValue": "$0",
+      "orderDate": "2025-04-10",
+      "status": "New"
     }
   ]
 }

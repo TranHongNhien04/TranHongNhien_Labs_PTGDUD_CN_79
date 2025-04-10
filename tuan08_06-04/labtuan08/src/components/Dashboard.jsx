@@ -8,7 +8,7 @@ import DetailReport from './DetailReport';
 
 function Dashboard() {
     return (
-        <div className="col-span-3  grid grid-cols-3 grid-rows-10">
+        <div className="col-span-3 grid grid-cols-3 grid-rows-10">
             <div className="col-span-3 row-span-1 grid grid-cols-3 -b p-4">
                 <span className="col-span-1 flex items-center font-bold">Dashboard</span>
                 <div className="col-start-3 flex items-center relative">
@@ -16,19 +16,18 @@ function Dashboard() {
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="w-full pl-7  rounded-md border"
+                            className="w-full pl-7 rounded-md border"
                         />
                         <img
                             src={Search}
                             alt=""
-                            className=" absolute pl-2 top-1/2 -translate-y-1/2"
+                            className="absolute pl-2 top-1/2 -translate-y-1/2"
                         />
                     </div>
                     <img src={Bell1} alt="" className="ml-4" />
                     <img src={Question_1} alt="" className="ml-4" />
                     <img src={Avatar1} alt="" className="ml-4" />
                 </div>
-
             </div>
             <Overview className="row-span-2" />
             <DetailReport className="row-span-7" />
