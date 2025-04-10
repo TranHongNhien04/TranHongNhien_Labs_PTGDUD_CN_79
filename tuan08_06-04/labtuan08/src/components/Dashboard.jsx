@@ -4,6 +4,8 @@ import Bell1 from '../assets/img/Bell 1.png';
 import Question_1 from '../assets/img/Question 1.png';
 import Avatar1 from '../assets/img/Avatar (1).png';
 import Overview from './Overview';
+import DetailReport from './DetailReport';
+
 function Dashboard() {
     return (
         <div className="col-span-3  grid grid-cols-3 grid-rows-10">
@@ -29,6 +31,7 @@ function Dashboard() {
 
             </div>
             <Overview />
+            <DetailReport />
         </div>
     );
 }
