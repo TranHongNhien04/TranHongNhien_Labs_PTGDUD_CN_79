@@ -85,7 +85,6 @@ function Menu() {
                 </ul>
             </nav>
 
-            {/* Add the "v2.0 is available" section with the "Try now" button */}
             <div className="mt-4 bg-blue-50 rounded-lg p-4 text-center">
                 <img src={GroupImage} alt="Group Illustration" className="mx-auto mb-2" />
                 <p className="text-sm font-semibold text-gray-800">v2.0 is available</p>
@@ -94,10 +93,7 @@ function Menu() {
                 </button>
             </div>
 
-            {/* Move the border-t div to the bottom */}
-            <div className="mt-auto border-t pt-4">
-                {/* You can add another element here if needed, or leave it empty */}
-            </div>
+            <div className="mt-auto border-t pt-4"></div>
         </div>
     );
 }

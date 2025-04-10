@@ -1,4 +1,3 @@
-// DetailReport.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import File_text_1 from '../assets/img/File text 1.png';
@@ -12,7 +11,6 @@ function DetailReport() {
 
     const handleCreateCustomer = async (newCustomer) => {
         try {
-            // Gửi yêu cầu POST để tạo khách hàng mới
             await axios.post('http://localhost:3000/Orders', {
                 ...newCustomer,
                 orderValue: '$0',
