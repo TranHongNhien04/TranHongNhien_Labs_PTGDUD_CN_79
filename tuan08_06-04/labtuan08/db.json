@@ -1,0 +1,20 @@
+{
+    "Turnover": {
+        "amount": 123,
+        "changePercentage": 1.9,
+        "changeDirection": "down",
+        "period": "this month"
+    },
+    "Profit": {
+        "amount": 123,
+        "changePercentage": 1.9,
+        "changeDirection": "down",
+        "period": "this month"
+    },
+    "New_customer": {
+        "count": 10,
+        "changePercentage": 0,
+        "changeDirection": "up",
+        "period": "this month"
+    }
+}
