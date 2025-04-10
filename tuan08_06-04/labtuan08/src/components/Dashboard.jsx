@@ -10,7 +10,7 @@ function Dashboard() {
     return (
         <div className="col-span-3  grid grid-cols-3 grid-rows-10">
             <div className="col-span-3 row-span-1 grid grid-cols-3 -b p-4">
-                <span className="col-span-1 font-bold">Dashboard</span>
+                <span className="col-span-1 flex items-center font-bold">Dashboard</span>
                 <div className="col-start-3 flex items-center relative">
                     <div className="relative">
                         <input
@@ -30,8 +30,8 @@ function Dashboard() {
                 </div>
 
             </div>
-            <Overview />
-            <DetailReport />
+            <Overview className="row-span-2" />
+            <DetailReport className="row-span-7" />
         </div>
     );
 }

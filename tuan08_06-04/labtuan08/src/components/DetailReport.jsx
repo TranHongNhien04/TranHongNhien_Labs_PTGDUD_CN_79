@@ -5,6 +5,7 @@ import ImportIcon from '../assets/img/Move up.png';
 import ExportIcon from '../assets/img/Download.png';
 import create from '../assets/img/create.png';
 import DataTable from 'react-data-table-component';
+import DataTableCustom from './DataTable';
 const columns = [
     {
         name: 'CUSTOMER NAME',
@@ -145,16 +146,7 @@ function DetailReport() {
                     </div>
                 </div>
                 <div>
-
-                    <DataTable
-                        columns={columns}
-                        data={data}
-                        selectableRows
-                        pagination
-                        paginationPerPage={5}
-
-
-                    />
+                    <DataTableCustom />
                 </div>
             </div>
         </>

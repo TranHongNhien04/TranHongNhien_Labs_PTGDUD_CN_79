@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Squares from '../assets/img/Squares four 1.png';
-import File_text_1 from '../assets/img/File text 1.png';
-import ImportIcon from '../assets/img/Move up.png';
-import ExportIcon from '../assets/img/Download.png';
+
 import Button1509 from '../assets/img/Button 1509.png';
 import Button1529 from '../assets/img/Button 1529.png';
 import Button1530 from '../assets/img/Button 1530.png';
-import create from '../assets/img/create.png';
+
 
 function Overview() {
     const [data, setData] = useState({
