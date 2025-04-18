@@ -8,10 +8,10 @@ import Hero from "./components/Hero";
 
 const App = () => {
   return (
-    <div className="font-sans text-gray-800">
+    <div className="font-sans">
       <Header />
       <Hero />
-      <main className="px-4 md:px-12 lg:px-24 space-y-16 py-8">
+      <main className="">
         <SummerRecipes />
         <RecipesWithVideos />
         <EditorsPick />

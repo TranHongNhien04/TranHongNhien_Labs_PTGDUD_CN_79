@@ -1,29 +1,51 @@
-import React from "react";
-
-const videos = [
-    { title: "Salad with cabbage and shrimp", time: "30 minutes", image: "/cabbage-shrimp.jpg" },
-    { title: "Salad of cove beans", time: "20 minutes", image: "/beans-potatoes.jpg" },
-    { title: "Sunny-side up fried egg", time: "15 minutes", image: "/sunny-egg.jpg" },
-    { title: "Lotus delight salad", time: "20 minutes", image: "/lotus-salad.jpg" },
-];
+import React, { useEffect, useState } from 'react';
+import bookmarkIcon from '/img/Icon Button 73.png';
 
 const RecipesWithVideos = () => {
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/videoRecipes')
+            .then(res => res.json())
+            .then(data => setVideos(data));
+    }, []);
+
     return (
-        <section>
-            <h2 className="text-pink-600 text-2xl font-bold mb-2 text-center">Recipes With Videos</h2>
-            <p className="text-center mb-6">Cooking Up Culinary Creations with Step-by-Step Videos</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {videos.map((v, i) => (
-                    <div key={i} className="bg-white rounded shadow overflow-hidden">
-                        <img src={v.image} alt={v.title} className="w-full h-40 object-cover" />
-                        <div className="p-3">
-                            <p className="font-semibold text-sm">{v.title}</p>
-                            <p className="text-xs text-pink-500">{v.time}</p>
+        <div className="text-center mt-12 px-4">
+            <h2 className="text-3xl font-bold text-pink-600 mb-2">Recipes With Videos</h2>
+            <p className="text-gray-600 mb-6">
+                Cooking Up Culinary Creations with Step-by-Step Videos
+            </p>
+
+            <div className="flex justify-center gap-6 flex-wrap">
+                {videos.map(video => (
+                    <div
+                        key={video.id}
+                        className="w-56 rounded-xl shadow-md bg-white overflow-hidden relative hover:shadow-lg transition"
+                    >
+                        <img
+                            src={video.image}
+                            alt={video.title}
+                            className="w-full h-36 object-cover"
+                        />
+
+                        <div className="p-4 text-left">
+                            <p className="font-semibold text-sm text-gray-800 leading-tight">
+                                {video.title}
+                            </p>
+                            <p className="text-xs text-pink-500 font-medium mt-1">
+                                {video.time}
+                            </p>
                         </div>
+                        <img
+                            src={bookmarkIcon}
+                            alt="bookmark"
+                            className="w-5 h-5 absolute bottom-4 right-4"
+                        />
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 };
 

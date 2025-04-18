@@ -1,29 +1,49 @@
-import React from "react";
-
-const recipes = [
-    { title: "Italian-style tomato salad", time: "10 minutes", image: "/tomato-salad.jpg" },
-    { title: "Spaghetti with vegetables", time: "15 minutes", image: "/spaghetti.jpg" },
-    { title: "Lotus delight salad", time: "20 minutes", image: "/lotus-salad.jpg" },
-    { title: "Snack cakes", time: "21 minutes", image: "/snack-cakes.jpg" },
-];
+import React, { useEffect, useState } from 'react';
+import bookmarkIcon from '/img/Icon Button 73.png';
 
 const SummerRecipes = () => {
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/summerRecipes')
+            .then(res => res.json())
+            .then(data => setRecipes(data));
+    }, []);
+
     return (
-        <section>
-            <h2 className="text-pink-600 text-2xl font-bold mb-2 text-center">This Summer Recipes</h2>
-            <p className="text-center mb-6">We have all your Independence Day sweets covered.</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {recipes.map((r, i) => (
-                    <div key={i} className="bg-white rounded shadow overflow-hidden">
-                        <img src={r.image} alt={r.title} className="w-full h-40 object-cover" />
-                        <div className="p-3">
-                            <p className="font-semibold text-sm">{r.title}</p>
-                            <p className="text-xs text-pink-500">{r.time}</p>
+        <div className="text-center mt-12 px-4">
+            <h2 className="text-3xl font-bold text-pink-600 mb-2">This Summer Recipes</h2>
+            <p className="text-gray-600 mb-6">We have all your Independence Day sweets covered.</p>
+
+            <div className="flex justify-center gap-6 flex-wrap">
+                {recipes.map(recipe => (
+                    <div
+                        key={recipe.id}
+                        className="w-56 rounded-xl shadow-md bg-white overflow-hidden relative hover:shadow-lg transition"
+                    >
+                        <img
+                            src={recipe.image}
+                            alt={recipe.title}
+                            className="w-full h-36 object-cover"
+                        />
+                        <div className="p-4 text-left">
+                            <p className="font-semibold text-sm text-gray-800 leading-tight">
+                                {recipe.title}
+                            </p>
+                            <p className="text-xs text-pink-500 font-medium mt-1">
+                                {recipe.time}
+                            </p>
                         </div>
+
+                        <img
+                            src={bookmarkIcon}
+                            alt="bookmark"
+                            className="w-5 h-5 absolute bottom-4 right-4"
+                        />
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 };
 

@@ -1,0 +1,88 @@
+{
+    "summerRecipes": [
+        {
+            "id": 1,
+            "image": "/img/Summer/Summer1.png",
+            "title": "Red, White & Blue Strawberry Shortcake",
+            "time": "1 hr"
+        },
+        {
+            "id": 2,
+            "image": "/img/Summer/Summer2.png",
+            "title": "Firecracker Milkshake",
+            "time": "30 mins"
+        },
+        {
+            "id": 3,
+            "image": "/img/Summer/Summer3.png",
+            "title": "Fourth of July Fruit Pizza",
+            "time": "45 mins"
+        },
+        {
+            "id": 4,
+            "image": "/img/Summer/Summer4.png",
+            "title": "Star-Spangled Pie",
+            "time": "1 hr 15 mins"
+        }
+    ],
+    "videoRecipes": [
+        {
+            "id": 1,
+            "image": "/img/Video/Video1.png",
+            "title": "Creamy Garlic Chicken",
+            "time": "1 hr"
+        },
+        {
+            "id": 2,
+            "image": "/img/Video/Video2.png",
+            "title": "Korean Fried Chicken",
+            "time": "40 mins"
+        },
+        {
+            "id": 3,
+            "image": "/img/Video/Video3.png",
+            "title": "Mango Sticky Rice",
+            "time": "50 mins"
+        },
+        {
+            "id": 4,
+            "image": "/img/Video/Video4.png",
+            "title": "Grilled Shrimp Tacos",
+            "time": "35 mins"
+        }
+    ],
+    "editorPicks": [
+        {
+            "id": 1,
+            "image": "/img/Editor/Editor1.png",
+            "title": "Bánh Mì Chảo",
+            "author": "Chef Lan",
+            "time": "20 mins",
+            "description": "A Vietnamese favorite with sizzling eggs and meat."
+        },
+        {
+            "id": 2,
+            "image": "/img/Editor/Editor2.png",
+            "title": "Bún Bò Huế",
+            "author": "Chef Huy",
+            "time": "2 hrs",
+            "description": "Spicy Hue-style beef noodle soup to warm your soul."
+        },
+        {
+            "id": 3,
+            "image": "/img/Editor/Editor3.png",
+            "title": "Chè Thái",
+            "author": "Chef Kim",
+            "time": "1 hr",
+            "description": "Refreshing dessert with colorful jellies and fruits."
+        },
+        {
+            "id": 4,
+            "image": "/img/Editor/Editor4.png",
+            "title": "Gỏi Cuốn",
+            "author": "Chef Nam",
+            "time": "45 mins",
+            "description": "Vietnamese spring rolls perfect for any occasion."
+        }
+    ]
+}
