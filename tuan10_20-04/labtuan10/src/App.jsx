@@ -1,4 +1,5 @@
 import './App.css'
+import CalculatorRedux from './components/CongTruRedux'
 import CalculatorUseReducer from './components/CongTruUseReducer'
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
 
   return (
     <>
-      <CalculatorUseReducer />
+      {/* <CalculatorUseReducer /> */}
+      <CalculatorRedux />
     </>
   )
 }
