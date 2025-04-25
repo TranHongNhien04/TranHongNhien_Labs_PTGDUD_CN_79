@@ -1,4 +1,5 @@
 import './App.css'
+import AuthApp from './components/AuthApp'
 import CalculatorRedux from './components/CongTruRedux'
 import CalculatorUseReducer from './components/CongTruUseReducer'
 import CounterApp from './components/CounterApp'
@@ -14,7 +15,8 @@ function App() {
       {/* <CounterApp /> */}
       {/* <TodoListApp /> */}
       {/* <ThemeApp /> */}
-      <CartApp />
+      {/* <CartApp /> */}
+      <AuthApp />
     </>
   )
 }
