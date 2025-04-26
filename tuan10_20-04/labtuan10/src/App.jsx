@@ -4,6 +4,7 @@ import AuthApp from './components/AuthApp'
 import CalculatorRedux from './components/CongTruRedux'
 import CalculatorUseReducer from './components/CongTruUseReducer'
 import CounterApp from './components/CounterApp'
+import CounterApp_2 from './components/CounterApp_2'
 import CartApp from './components/ShoppingApp'
 import ThemeApp from './components/ThemeApp'
 import TodoListApp from './components/TodoList'
@@ -20,7 +21,8 @@ function App() {
       {/* <CartApp /> */}
       {/* <AuthApp /> */}
       {/* <UsersApp /> */}
-      <AsyncThunkApp />
+      {/* <AsyncThunkApp /> */}
+      <CounterApp_2 />
     </>
   )
 }
