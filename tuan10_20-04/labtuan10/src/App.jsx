@@ -1,6 +1,7 @@
 import './App.css'
 import AsyncThunkApp from './components/AsyncThunk'
 import AuthApp from './components/AuthApp'
+import BMIApp from './components/BMIApp'
 import CalculatorRedux from './components/CongTruRedux'
 import CalculatorUseReducer from './components/CongTruUseReducer'
 import CounterApp from './components/CounterApp'
@@ -22,7 +23,8 @@ function App() {
       {/* <AuthApp /> */}
       {/* <UsersApp /> */}
       {/* <AsyncThunkApp /> */}
-      <CounterApp_2 />
+      {/* <CounterApp_2 /> */}
+      <BMIApp />
     </>
   )
 }
